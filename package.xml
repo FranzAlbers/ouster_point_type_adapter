@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>ouster_point_type_adapter</name>
+  <version>0.1.0</version>
+  <description>The RST ouster_point_type_adapter package</description>
+
+  <maintainer email="franz.albers@tu-dortmund.de">Franz Albers</maintainer>
+
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <build_depend>rclcpp</build_depend>
+  <build_depend>rclcpp_components</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>pcl_conversions</build_depend>
+  <build_depend>ouster_ros</build_depend>
+  <build_depend>autoware_point_types</build_depend>
+
+  <exec_depend>rclcpp</exec_depend>
+  <exec_depend>rclcpp_components</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>pcl_conversions</exec_depend>
+  <exec_depend>ouster_ros</exec_depend>
+  <exec_depend>autoware_point_types</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
