@@ -4,7 +4,7 @@
 #include "sensor_msgs/point_cloud2_iterator.hpp"
 #include "pcl_conversions/pcl_conversions.h"
 #include "ouster_ros/include/ouster_ros/os_point.h"
-#include "autoware_point_types/types.hpp"
+#include "autoware/point_types/types.hpp"
 #include <cmath>
 
 namespace ouster_point_type_adapter
@@ -31,13 +31,13 @@ void OusterPointTypeAdapter::pointCloudCallback(const sensor_msgs::msg::PointClo
   pcl::fromROSMsg(*msg, *input_pointcloud);
 
   // Instantiate pcl pointcloud message for the output point cloud
-  pcl::PointCloud<autoware_point_types::PointXYZIRCAEDT>::Ptr output_pointcloud(
-    new pcl::PointCloud<autoware_point_types::PointXYZIRCAEDT>);
+  pcl::PointCloud<autoware::point_types::PointXYZIRCAEDT>::Ptr output_pointcloud(
+    new pcl::PointCloud<autoware::point_types::PointXYZIRCAEDT>);
   
   output_pointcloud->reserve(input_pointcloud->points.size());
 
   // Convert pcl from ouster to pcl autoware format
-  autoware_point_types::PointXYZIRCAEDT point{};
+  autoware::point_types::PointXYZIRCAEDT point{};
   for (const auto & p : input_pointcloud->points) {
     point.x = p.x;
     point.y = p.y;
